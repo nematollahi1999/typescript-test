@@ -1,0 +1,22 @@
+{
+  "name": "typescript-fundamentals-test",
+  "version": "1.0.0",
+  "description": "TypeScript Fundamentals Assessment Test",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc --noEmit",
+    "check": "tsc --noEmit"
+  },
+  "keywords": [
+    "typescript",
+    "test",
+    "assessment"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
+
