@@ -10,47 +10,56 @@
 // - age: number
 // - email?: string (optional)
 interface Person {
-  // Add properties here
+  firstName: string;
+  lastName: string;
+  age: number;
+  email?: string;
 }
 
 // TODO: Define an interface 'Employee' that extends 'Person' and adds:
 // - employeeId: number
 // - department: string
-interface Employee {
-  // Extend Person and add properties
+interface Employee extends Person {
+  employeeId: number;
+  department: string;
 }
 
 // TODO: Define an interface for a function type that takes two numbers and returns a number
 interface Calculator {
-  // Define function signature
+  (a: number, b: number): number;
 }
 
 // TODO: Define an interface 'Config' with an index signature
 // that allows any string key with string or number values
 interface Config {
-  // Add index signature
+  [key: string]: string | number;
 }
 
 // TODO: Implement a function that accepts a Person and returns a formatted string
 function formatPerson(person: Person): string {
-  // Implement this function
-  return '';
+  let info = `${person.firstName} has ${person.age} years old.`;
+  return info;
 }
 
 // TODO: Create an object that implements the Employee interface
 const employee: Employee = {
-  // Add required properties
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  employeeId: 12345,
+  department: "Engineering"
 };
 
 // TODO: Create a function that implements the Calculator interface
 const add: Calculator = (a, b) => {
-  // Implement addition
-  return 0;
+  return a + b;
 };
+// console.log(add(2, 3));
 
 // TODO: Create a config object that matches the Config interface
 const appConfig: Config = {
-  // Add some properties
+  appName: "MyApp",
+  version: 1.0, 
 };
 
 export { Person, Employee, Calculator, Config, formatPerson, employee, add, appConfig };
