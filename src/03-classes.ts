@@ -10,15 +10,37 @@
 // - public method 'getName()': returns string
 // - constructor that takes name and age
 class Animal {
-  // Implement the class
+  private name: string;
+  protected age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  public getName(): string {
+    return this.name;
+  }
 }
 
 // TODO: Create a class 'Dog' that extends 'Animal' and adds:
 // - private property 'breed': string
 // - public method 'bark()': returns string
 // - override 'getName()' to return formatted string
-class Dog {
-  // Extend Animal and add properties/methods
+class Dog extends Animal {
+  private breed: string;
+
+  constructor(name: string, age: number, breed: string) {
+    super(name, age);
+    this.breed = breed;
+  }
+
+  public bark(): string {
+    return "Woof! Woof!";
+  }
+
+  // override getName
+  public getName(): string {
+    return `Dog: ${super.getName()} (${this.breed})`;
+  }
 }
 
 // TODO: Create an abstract class 'Shape' with:
